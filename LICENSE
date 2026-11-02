@@ -1,0 +1,37 @@
+SACDR Author — Personal & Noncommercial Software License
+
+Copyright (c) 2026 guipel (https://github.com/guipel/sacdr-author-releases)
+All rights reserved.
+
+1. Grant of License (Personal & Noncommercial Use Only)
+Subject to the terms of this License, the copyright holder ("Licensor") grants you a
+personal, revocable, non-exclusive, non-transferable, royalty-free license to download,
+install, and run the SACDR Author software binaries ("Software") strictly for personal,
+private, educational, or noncommercial purposes.
+
+2. Restrictions
+Except with prior written permission from the Licensor, you may not:
+  a) Use the Software for any commercial, business, or for-profit purpose, or offer any
+     paid product or service using the Software;
+  b) Sell, rent, lease, sublicense, repackage, mirror, or redistribute the Software
+     binaries on third-party websites, app stores, or package repositories; or
+  c) Modify, adapt, translate, decompile, disassemble, or reverse-engineer the Software,
+     except to the minimum extent that such restriction is expressly prohibited by
+     applicable law.
+
+3. Third-Party Open-Source Components
+Self-contained distributions of the Software bundle third-party open-source runtime
+libraries and font assets governed by their own permissive licenses (including the MIT
+License and SIL Open Font License 1.1). Those components remain subject to their
+respective licenses as detailed in THIRD-PARTY-NOTICES.md.
+
+4. Termination
+This License terminates automatically if you breach any of its terms.
+
+5. Disclaimer of Warranty & Limitation of Liability
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE,
+ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
