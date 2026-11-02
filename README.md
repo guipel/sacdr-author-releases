@@ -28,14 +28,14 @@ Download the latest package for your computer from **[Releases](https://github.c
 
 | Platform | Download | Contents |
 | :--- | :--- | :--- |
-| **Windows 10 / 11** (`x64`) | `sacdr-author-vX.Y.Z-win-x64.zip` | `sacdr-author-gui.exe` + `sacdr-author-cli.exe` |
-| **macOS 12+** (`M1`–`M5` `ARM64`) | `sacdr-author-vX.Y.Z-macos-arm64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
-| **macOS 12+** (`x64`) | `sacdr-author-vX.Y.Z-macos-x64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
-| **Linux** (`x64`) | `sacdr-author-vX.Y.Z-linux-x64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
-| **Linux** (`ARM64`) | `sacdr-author-vX.Y.Z-linux-arm64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
+| **Windows 10 / 11** (`x64`) | `sacdr-author-vX.Y.Z.B-win-x64.zip` | `sacdr-author-gui.exe` + `sacdr-author-cli.exe` |
+| **macOS 12+** (`M1`–`M5` `ARM64`) | `sacdr-author-vX.Y.Z.B-macos-arm64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
+| **macOS 12+** (`x64`) | `sacdr-author-vX.Y.Z.B-macos-x64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
+| **Linux** (`x64`) | `sacdr-author-vX.Y.Z.B-linux-x64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
+| **Linux** (`ARM64`) | `sacdr-author-vX.Y.Z.B-linux-arm64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
 
 ### Windows
-1. Extract **`sacdr-author-vX.Y.Z-win-x64.zip`** to any folder.
+1. Extract **`sacdr-author-vX.Y.Z.B-win-x64.zip`** to any folder.
 2. Double-click **`sacdr-author-gui.exe`** to open the desktop app. *(If SmartScreen prompts on first launch, click **More info** → **Run anyway**.)*
 3. For the command line, run `.\sacdr-author-cli.exe -Help` in PowerShell or Command Prompt.
 
