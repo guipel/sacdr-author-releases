@@ -13,11 +13,9 @@ private, educational, or noncommercial purposes.
 Except with prior written permission from the Licensor, you may not:
   a) Use the Software for any commercial, business, or for-profit purpose, or offer any
      paid product or service using the Software;
-  b) Sell, rent, lease, sublicense, repackage, mirror, or redistribute the Software
-     binaries on third-party websites, app stores, or package repositories; or
-  c) Modify, adapt, translate, decompile, disassemble, or reverse-engineer the Software,
-     except to the minimum extent that such restriction is expressly prohibited by
-     applicable law.
+  b) Sell, rent, lease, sublicense, mirror, or redistribute the Software binaries on
+     third-party websites, app stores, or package repositories; or
+  c) Distribute modified, rebranded, or repackaged versions of the Software.
 
 3. Third-Party Open-Source Components
 Self-contained distributions of the Software bundle third-party open-source runtime

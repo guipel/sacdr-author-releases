@@ -5,7 +5,7 @@
 
 **Bring your digital DSD collection to your living-room universal SACD-R player.**
 
-**SACDR Author** creates bit-perfect **SACD-R `.iso` disc images** from your `.dsf` albums—ready to burn onto standard DVD media and play on compatible universal SACD-R players, as well as music servers and desktop DSD players.
+**SACDR Author** creates bit-perfect **SACD-R `.iso` disc images** from your `.dsf` and `.dff` albums (including single-file `.dff`/`.dsf` + `.cue` images)—ready to burn onto standard DVD media and play on compatible universal SACD-R players, as well as music servers and desktop DSD players.
 
 Available as a self-contained desktop app and command-line tool for **Windows, macOS, and Linux**.
 
@@ -13,8 +13,8 @@ Available as a self-contained desktop app and command-line tool for **Windows, m
 
 ## Highlights
 
-- **Effortless From Folder to Disc** — Drag in your `.dsf` album folder, review the auto-filled album and track titles, and click **Create SACD ISO**. No cue sheets, authoring scripts, or legacy studio tools needed.
-- **100% Bit-Perfect Native DSD** — Zero PCM conversion, resampling, or signal processing. Built-in verification checks the finished `.iso` to confirm every audio sample matches your source `.dsf` files bit-for-bit.
+- **Effortless From Folder to Disc** — Drag in your `.dsf`, `.dff` (uncompressed or lossless DST), or `.cue` album folder, review the auto-filled album and track titles, and click **Create SACD ISO**. Mix formats and DSD rates (`DSD64`–`DSD512`) freely across Stereo and Surround zones.
+- **100% Bit-Perfect Native `DSD64` + Precision `DSD128/256/512 → DSD64` Downsampling** — Native `DSD64` sources pass through 100% untouched with zero DSP. High-rate `DSD128`, `DSD256`, and `DSD512` albums are automatically converted to Scarlet Book `DSD64` using a self-contained 64-bit linear-phase FIR + 5th-order Delta-Sigma Modulator (`> 116 dB` audible SNR, zero external tools), with deterministic verification against your source files.
 - **Bit-Perfect Lossless Compression** — Built-in multi-core lossless audio compression packs full-length `5.1 Surround` and **Dual-Zone** albums onto a standard `4.7 GB` single-layer DVD without losing a single bit of audio quality.
 - **Stereo, 5.1 Surround & Dual-Zone Discs** — Author dedicated `2.0 Stereo` discs, `5.0 / 5.1 Surround` discs, or commercial-style **Dual-Zone** discs carrying both Stereo and Surround mixes on one disc.
 - **Built for Universal SACD-R Players** — Produces `SACD-R` disc images engineered for reliable recognition across compatible universal disc transports *(note: physical `SACD-R` playback on DVD media requires a compatible universal player; standard SACD-only players cannot read DVD media)*.
@@ -31,8 +31,8 @@ Download the latest package for your computer from **[Releases](https://github.c
 | **Windows 10 / 11** (`x64`) | `sacdr-author-vX.Y.Z.B-win-x64.zip` | `sacdr-author-gui.exe` + `sacdr-author-cli.exe` |
 | **macOS 12+** (`M1`–`M5` `ARM64`) | `sacdr-author-vX.Y.Z.B-macos-arm64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
 | **macOS 12+** (`x64`) | `sacdr-author-vX.Y.Z.B-macos-x64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
-| **Linux** (`x64`) | `sacdr-author-vX.Y.Z.B-linux-x64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
-| **Linux** (`ARM64`) | `sacdr-author-vX.Y.Z.B-linux-arm64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` |
+| **Linux** (`x64`) | `sacdr-author-vX.Y.Z.B-linux-x64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` + desktop icon/launcher |
+| **Linux** (`ARM64`) | `sacdr-author-vX.Y.Z.B-linux-arm64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` + desktop icon/launcher |
 
 ### Windows
 1. Extract **`sacdr-author-vX.Y.Z.B-win-x64.zip`** to any folder.
@@ -58,6 +58,7 @@ Download the latest package for your computer from **[Releases](https://github.c
    cd sacdr-author-v*-linux-x64
    ./sacdr-author-gui
    ```
+   *(Optional desktop launcher: update the `Exec=` path in `sacdr-author.desktop`, copy `sacdr-author.png` to `~/.local/share/icons/hicolor/256x256/apps/`, and copy `sacdr-author.desktop` to `~/.local/share/applications/`.)*
    *(On minimal installations without X11/font packages, install `libx11-6 libice6 libsm6 libfontconfig1` on Debian/Ubuntu or `libX11 libICE libSM fontconfig` on Fedora.)*
 
 ---
@@ -65,8 +66,8 @@ Download the latest package for your computer from **[Releases](https://github.c
 ## Quick Start
 
 ### Desktop App
-1. **Drop your `.dsf` folder(s)** — Add a **2.0 Stereo** folder, a **5.0 / 5.1 Surround** folder, or **both** to build a Dual-Zone disc.
-2. **Review metadata & compression** — Album, artist, year, genre, and track titles populate automatically from your `.dsf` files. Enable lossless compression when you want a large album to fit on a single-layer `4.7 GB` DVD.
+1. **Drop your DSD folder(s)** — Add a **2.0 Stereo** folder, a **5.0 / 5.1 Surround** folder, or **both** to build a Dual-Zone disc (`.dsf`, `.dff`, or single-file `.dff`/`.dsf` + `.cue`).
+2. **Review metadata & compression** — Album, artist, year, genre, catalog number, and track titles populate automatically from your `ID3v2` / `DIIN` tags or `.cue` sheet. Enable lossless compression when you want a large album to fit on a single-layer `4.7 GB` DVD.
 3. **Create your `.iso`** — Click **Create SACD ISO** (and optionally verify bit-for-bit integrity automatically).
 4. **Burn & play** — Burn the `.iso` as a **disc image** onto a quality `DVD-R` or `DVD+R` (`4x`–`8x` speed) with any standard disc-burning utility and play it in your compatible universal `SACD-R` player.
 
