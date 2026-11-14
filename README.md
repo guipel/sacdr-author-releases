@@ -5,7 +5,7 @@
 
 **Bring your digital DSD collection to your living-room universal SACD-R player.**
 
-**SACDR Author** creates bit-perfect **SACD-R `.iso` disc images** from your `.dsf` and `.dff` albums (including single-file `.dff`/`.dsf` + `.cue` images)—ready to burn onto standard DVD media and play on compatible universal SACD-R players, as well as music servers and desktop DSD players.
+**SACDR Author** creates, inspects, verifies, and repairs bit-perfect **SACD-R `.iso` disc images** from your `.dsf` and `.dff` albums (including single-file `.dff`/`.dsf` + `.cue` images)—ready to burn onto standard DVD media and play on compatible universal SACD-R players, as well as music servers and desktop DSD players.
 
 Available as a self-contained desktop app and command-line tool for **Windows, macOS, and Linux**.
 
@@ -15,7 +15,8 @@ Available as a self-contained desktop app and command-line tool for **Windows, m
 
 - **Effortless From Folder to Disc** — Drag in your `.dsf`, `.dff` (uncompressed or lossless DST), or `.cue` album folder, review the auto-filled album and track titles, and click **Create SACD ISO**. Mix formats and DSD rates (`DSD64`–`DSD512`) freely across Stereo and Surround zones.
 - **100% Bit-Perfect Native `DSD64` + Precision `DSD128/256/512 → DSD64` Downsampling** — Native `DSD64` sources pass through 100% untouched with zero DSP. High-rate `DSD128`, `DSD256`, and `DSD512` albums are automatically converted to Scarlet Book `DSD64` using a self-contained 64-bit linear-phase FIR + 5th-order Delta-Sigma Modulator (`> 116 dB` audible SNR, zero external tools), with deterministic verification against your source files.
-- **Bit-Perfect Lossless Compression** — Built-in multi-core lossless audio compression packs full-length `5.1 Surround` and **Dual-Zone** albums onto a standard `4.7 GB` single-layer DVD without losing a single bit of audio quality.
+- **Fast Bit-Perfect Lossless Compression** — High-speed multi-core lossless audio compression packs full-length `5.1 Surround` and **Dual-Zone** albums onto a standard `4.7 GB` single-layer DVD without losing a single bit of audio quality.
+- **Inspect & Repair Existing SACD ISOs** — Open any SACD `.iso` in **Inspect & Repair ISO** (or `-Mode Repair`) to check player compatibility and rebuild clean, player-ready `SACD-R` disc headers in seconds without touching or re-encoding your audio.
 - **Stereo, 5.1 Surround & Dual-Zone Discs** — Author dedicated `2.0 Stereo` discs, `5.0 / 5.1 Surround` discs, or commercial-style **Dual-Zone** discs carrying both Stereo and Surround mixes on one disc.
 - **Built for Universal SACD-R Players** — Produces `SACD-R` disc images engineered for reliable recognition across compatible universal disc transports *(note: physical `SACD-R` playback on DVD media requires a compatible universal player; standard SACD-only players cannot read DVD media)*.
 - **Desktop App + Batch CLI Anywhere** — Runs out of the box on **Windows**, **macOS** (`ARM64` & `x64`), and **Linux** with nothing extra to install—use the visual studio for single albums or `sacdr-author-cli` to automate a library.
@@ -30,7 +31,7 @@ Download the latest package for your computer from **[Releases](https://github.c
 | :--- | :--- | :--- |
 | **Windows 10 / 11** (`x64`) | `sacdr-author-vX.Y.Z.B-win-x64.zip` | `sacdr-author-gui.exe` + `sacdr-author-cli.exe` |
 | **macOS 12+** (`M1`–`M5` `ARM64`) | `sacdr-author-vX.Y.Z.B-macos-arm64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
-| **macOS 12+** (`x64`) | `sacdr-author-vX.Y.Z.B-macos-x64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
+| **macOS 12+** (`Intel x64`) | `sacdr-author-vX.Y.Z.B-macos-x64.zip` | `SACDR Author.app` + `sacdr-author-cli` |
 | **Linux** (`x64`) | `sacdr-author-vX.Y.Z.B-linux-x64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` + desktop icon/launcher |
 | **Linux** (`ARM64`) | `sacdr-author-vX.Y.Z.B-linux-arm64.tar.gz` | `sacdr-author-gui` + `sacdr-author-cli` + desktop icon/launcher |
 
@@ -68,21 +69,27 @@ Download the latest package for your computer from **[Releases](https://github.c
 ### Desktop App
 1. **Drop your DSD folder(s)** — Add a **2.0 Stereo** folder, a **5.0 / 5.1 Surround** folder, or **both** to build a Dual-Zone disc (`.dsf`, `.dff`, or single-file `.dff`/`.dsf` + `.cue`).
 2. **Review metadata & compression** — Album, artist, year, genre, catalog number, and track titles populate automatically from your `ID3v2` / `DIIN` tags or `.cue` sheet. Enable lossless compression when you want a large album to fit on a single-layer `4.7 GB` DVD.
-3. **Create your `.iso`** — Click **Create SACD ISO** (and optionally verify bit-for-bit integrity automatically).
-4. **Burn & play** — Burn the `.iso` as a **disc image** onto a quality `DVD-R` or `DVD+R` (`4x`–`8x` speed) with any standard disc-burning utility and play it in your compatible universal `SACD-R` player.
+3. **Create, verify, or repair `.iso` images** — Click **Create SACD ISO** (with automatic bit-exact post-build verification), or open any existing `.iso` in **Inspect & Repair ISO** to check player compatibility and repair its `SACD-R` disc headers.
+4. **Burn & play** — Burn the `.iso` as a **disc image** onto a quality `DVD-R` or `DVD+R` at **`4x`–`8x` speed** *(avoid `MAX` burn speeds so standalone players can read the disc cleanly)* and play it in your compatible universal `SACD-R` player.
 
 ### Command Line (`sacdr-author-cli`)
 
 ```bash
-# Stereo SACD-R ISO
+# Stereo SACD-R ISO (.dsf, .dff, or .cue folder)
 sacdr-author-cli -Mode Stereo -StereoDir "./Album/Stereo" -Output "./Album.iso"
 
 # Dual-Zone (Stereo + 5.1 Surround) with maximum lossless compression
 sacdr-author-cli -Mode Hybrid -StereoDir "./Album/Stereo" -MultiDir "./Album/5.1" \
     -Output "./Album.iso" -CompressStereo -Compression Max
 
-# Verify an authored SACD ISO bit-for-bit
-sacdr-author-cli -Mode Verify -Output "./Album.iso"
+# Inspect disc metadata & SACD-R player compatibility
+sacdr-author-cli -Mode Inspect -Input "./Album.iso"
+
+# Verify audio frames bit-for-bit against source DSD folders
+sacdr-author-cli -Mode Verify -Input "./Album.iso" -StereoDir "./Album/Stereo"
+
+# Repair an existing ISO's headers for SACD-R players without re-encoding audio
+sacdr-author-cli -Mode Repair -Input "./RawRip.iso" -Output "./Album-SACDR.iso"
 ```
 
 Run `sacdr-author-cli -Help` to view all command-line options.

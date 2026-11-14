@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0] - 2026-11-13
+
+- **Inspect & Repair Existing SACD ISOs** — Open any authored or ripped SACD `.iso` in **Inspect & Repair ISO** (or `-Mode Repair` in the CLI) to check player compatibility and rebuild clean, player-ready `SACD-R` disc headers in seconds without re-encoding your audio.
+- **Improved Universal `SACD-R` Player Compatibility** — Fixes disc layout, track seeking / fast-forward tables, and Track 1 pre-gap silence so burned `SACD-R` discs load, play, and seek reliably on standalone universal players (including Oppo `UDP-203` / `UDP-205` and compatible transports).
+- **Faster ISO Creation & Verification** — Accelerated multi-core lossless compression, DSD stream processing, and background disk reading/writing shorten ISO build and verification times while preserving 100% bit-perfect audio quality.
+- **Accurate Genres, International Characters & Safety Checks** — Uses standard SACD genre categories, preserves copyright symbols (`©` / `℗`) and accented European/Asian album and track titles across authoring and repair, and detects incomplete `.iso` files before repair.
+
 ## [1.1.0] - 2026-11-03
 
 - **`DSD128` / `DSD256` / `DSD512` → `DSD64` Downsampling** — Built-in, zero-dependency 64-bit linear-phase FIR + 5th-order Scarlet Book Delta-Sigma Modulator automatically converts `DSD128` (`5.64 MHz`), `DSD256` (`11.29 MHz`), and `DSD512` (`22.58 MHz`) tracks across `.dsf`, `.dff` (`DSD` & `DST`), and `.cue` inputs to hardware-playable `DSD64` (`2.82 MHz`), while keeping native `DSD64` sources 100% bit-perfect with zero DSP.
