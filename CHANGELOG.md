@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1] - 2026-11-26
+
+- **Clean Disc Metadata Loading & Conflict Prompt** — Switching folders or loading a second Dual-Zone area no longer leaves stale tags from a previous album behind; when a newly loaded folder has different metadata, SACDR Author shows the exact field changes and asks whether to overwrite or keep your current tags. Untagged folders never trigger prompts, and all metadata fields now start cleanly blank.
+- **Faster Dual-Zone Browsing & Keyboard-Friendly Dialogs** — Browsing for the second Dual-Zone folder now opens at your album's parent directory automatically, and confirmation dialogs support `Enter` / `Escape` shortcuts plus scrolling for long summaries.
+- **Stability & Incomplete-ISO Diagnostics** — Fixes a crash if an inspected `.iso` is moved or disconnected before clicking **Repair / Rebuild Headers...**, clears stale verification folders when a broken ISO fails to load, and displays a clear incomplete/sparse-download message for all-zero `.iso` files.
+
 ## [1.2.0] - 2026-11-13
 
 - **Inspect & Repair Existing SACD ISOs** — Open any authored or ripped SACD `.iso` in **Inspect & Repair ISO** (or `-Mode Repair` in the CLI) to check player compatibility and rebuild clean, player-ready `SACD-R` disc headers in seconds without re-encoding your audio.
